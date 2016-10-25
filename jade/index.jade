@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js")
+		link(rel="stylesheet", href="all.min.css")
+		title Lesson3
+body
+	include ./mixin.jade
+	.container
+		ul
+			- var count = 5
+			- for (var i = 1; i <= 5; i++){
+				li
+					Элемент #{i}
+			-}
+		form(method='post')
+			input(type="text", name="insert")
+			br
+			br
+			+input ("selectFirst", "Выбрать первый")
+			+input ("selectLast", "Выбрать последний")
+			+input ("selectNext", "Выбрать следующий")
+			+input ("selectPrevious", "Выбрать предыдущий")
+			+input ("addElement", "Добавить элемент")
+			+input ("removeElement", "Удалить элемент")
+			+input ("insertBefore", "Вставить в начало")
+	script(src="./js/main.js")
+
+		

@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
 	concatCss = require('gulp-concat-css'),
+    concat = require('gulp-concat'),
     autoprefixer = require('gulp-autoprefixer'),
 	cssmin = require('gulp-cssmin'),
     stylus = require('gulp-stylus'),
@@ -11,6 +12,7 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename');
     uglify = require('gulp-uglify');
 
+
 gulp.task('image', function () {
     return gulp.src('./img/*')
         .pipe(imagemin({
@@ -21,10 +23,12 @@ gulp.task('image', function () {
         .pipe(gulp.dest('./builds/img/'));
 });
 
+
+
 gulp.task('js', function () {
     return gulp.src('./js/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('./builds/js/'));
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest('./builds/js'));
 });
 
 
@@ -58,6 +62,7 @@ gulp.task('jade', function() {
         }))
         .pipe(prettify({indent_char: ' ', indent_size: 3}))
         .pipe(gulp.dest('./builds/'))
+    
 });
 
 
@@ -67,7 +72,8 @@ gulp.task('css', function () {
 	.pipe(concatCss("all.css")) 
 	.pipe(cssmin()) 
 	.pipe(rename({suffix: '.min'})) 
-	.pipe(gulp.dest('./builds/')); 
+	.pipe(gulp.dest('./builds/'))
+  
 });
 
 
@@ -75,5 +81,6 @@ gulp.task('watch', function() {
     gulp.watch("./jade/*.jade", ['jade']);
     gulp.watch("./styl/*.styl", ['styl']);
     gulp.watch("./css/*.css", ['css']);
+    gulp.watch("./js/*.js", ['js']);
  
 });

@@ -8,23 +8,27 @@ html(lang="en")
 body
 	include ./mixin.jade
 	.container
-		ul
+		ul#elements
 			- var count = 5
 			- for (var i = 1; i <= 5; i++){
 				li
-					Элемент #{i}
+					Элемент  #{i}
 			-}
 		form(method='post')
 			input(type="text", name="insert")
 			br
 			br
-			+input ("selectFirst", "Выбрать первый")
-			+input ("selectLast", "Выбрать последний")
-			+input ("selectNext", "Выбрать следующий")
-			+input ("selectPrevious", "Выбрать предыдущий")
-			+input ("addElement", "Добавить элемент")
-			+input ("removeElement", "Удалить элемент")
-			+input ("insertBefore", "Вставить в начало")
+			+input ("First", "Выбрать первый", "selectFirst")
+			+input ("Last", "Выбрать последний", "selectLast")
+			+input ("Next", "Выбрать следующий", "selectNext")
+			+input ("Previous", "Выбрать предыдущий", "selectPrevious")
+			+input ("Add", "Добавить элемент", "addElement")
+			+input ("Remove", "Удалить элемент", "removeElement")
+			+input ("Insert", "Вставить  в начало", "insertUp")
 	script(src="./js/main.js")
+			
+
+
+	
 
 		

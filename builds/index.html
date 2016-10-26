@@ -12,7 +12,7 @@
 
 <body>
    <div class="container">
-      <ul>
+      <ul id="elements">
          <li>Элемент 1</li>
          <li>Элемент 2</li>
          <li>Элемент 3</li>
@@ -23,13 +23,13 @@
          <input type="text" name="insert">
          <br>
          <br>
-         <input type="button" name="selectFirst" value="Выбрать первый">
-         <input type="button" name="selectLast" value="Выбрать последний">
-         <input type="button" name="selectNext" value="Выбрать следующий">
-         <input type="button" name="selectPrevious" value="Выбрать предыдущий">
-         <input type="button" name="addElement" value="Добавить элемент">
-         <input type="button" name="removeElement" value="Удалить элемент">
-         <input type="button" name="insertBefore" value="Вставить в начало">
+         <input type="button" name="First" value="Выбрать первый" onclick="selectFirst()">
+         <input type="button" name="Last" value="Выбрать последний" onclick="selectLast()">
+         <input type="button" name="Next" value="Выбрать следующий" onclick="selectNext()">
+         <input type="button" name="Previous" value="Выбрать предыдущий" onclick="selectPrevious()">
+         <input type="button" name="Add" value="Добавить элемент" onclick="addElement()">
+         <input type="button" name="Remove" value="Удалить элемент" onclick="removeElement()">
+         <input type="button" name="Insert" value="Вставить  в начало" onclick="insertUp()">
       </form>
    </div>
    <script src="./js/main.js"></script>

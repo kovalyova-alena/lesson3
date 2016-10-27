@@ -20,13 +20,63 @@ function removeClassActive() {
 }
 
 function selectNext() {
-	var findId = document.getElementById('elements');
-	var findLiActive = document.getElementsByClassName('active');
-	var findLi = document.getElementsByTagName('li');	
+
+	var findId = document.getElementById('elements'),
+	    findLiActive = findId.getElementsByClassName('active'),
+	    findLi = findId.getElementsByTagName('li');
+	
+
+	function addClassActive () {
+		if (findId.lastElementChild.classList.contains('active')) {
+   			removeClassActive(); 
+   			findId.firstElementChild.classList.add('active');
+   		} else {
+   			removeClassActive(); 
+	    	child = child.nextElementSibling.classList.add('active');
+   		}   
+	}
+		
+    if (findLiActive.length !=0) {
+    	for (var i = 0; findLi.length> i ; i++) {
+		    if (findLi[i].classList.contains('active')) {
+		        child = findLi[i];
+	   		} 
+   		} 
+   		addClassActive();
+    } else {
+    	removeClassActive(); 
+    	findId.firstElementChild.classList.add('active');
+    } 
+
  }
 
 function selectPrevious() {
-	alert('6576765');
+	var findId = document.getElementById('elements'),
+	    findLiActive = findId.getElementsByClassName('active'),
+	    findLi = findId.getElementsByTagName('li');
+	
+
+	function addClassActive () {
+		if (findId.firstElementChild.classList.contains('active')) {
+   			removeClassActive(); 
+   			findId.lastElementChild.classList.add('active');
+   		} else {
+   			removeClassActive(); 
+	    	child = child.previousElementSibling.classList.add('active');
+   		}   
+	}
+		
+    if (findLiActive.length !=0) {
+    	for (var i = 0; findLi.length> i ; i++) {
+		    if (findLi[i].classList.contains('active')) {
+		        child = findLi[i];
+	   		} 
+   		} 
+   		addClassActive();
+    } else {
+    	removeClassActive(); 
+    	findId.lastElementChild.classList.add('active');
+    } 
 }
 
 function addElement(form) {

@@ -20,16 +20,16 @@
          <li>Элемент 5</li>
       </ul>
       <form method="post">
-         <input type="text" name="insert">
+         <input type="text" name="insert" value="">
          <br>
          <br>
-         <input type="button" name="First" value="Выбрать первый" onclick="selectFirst()">
-         <input type="button" name="Last" value="Выбрать последний" onclick="selectLast()">
-         <input type="button" name="Next" value="Выбрать следующий" onclick="selectNext()">
-         <input type="button" name="Previous" value="Выбрать предыдущий" onclick="selectPrevious()">
-         <input type="button" name="Add" value="Добавить элемент" onclick="addElement()">
-         <input type="button" name="Remove" value="Удалить элемент" onclick="removeElement()">
-         <input type="button" name="Insert" value="Вставить  в начало" onclick="insertUp()">
+         <input type="button" name="First" value="Выбрать первый" onclick="selectFirst(this.form)">
+         <input type="button" name="Last" value="Выбрать последний" onclick="selectLast(this.form)">
+         <input type="button" name="Next" value="Выбрать следующий" onclick="selectNext(this.form)">
+         <input type="button" name="Previous" value="Выбрать предыдущий" onclick="selectPrevious(this.form)">
+         <input type="button" name="Add" value="Добавить элемент" onclick="addElement(this.form)">
+         <input type="button" name="Remove" value="Удалить элемент" onclick="removeElement(this.form)">
+         <input type="button" name="Insert" value="Вставить  в начало" onclick="insertUp(this.form)">
       </form>
    </div>
    <script src="./js/main.js"></script>
